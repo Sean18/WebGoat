@@ -10,6 +10,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: JavaToolInstaller@1
+  inputs:
+    versionSpec: '17'
+    jdkArchitectureOption: 'x86'
+    jdkSourceOption: 'PreInstalled'
+
 - task: Bash@3
   inputs:
     targetType: 'inline'
