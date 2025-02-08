@@ -25,14 +25,14 @@ steps:
       java -version
       echo 'done.'
 
-#- task: Maven@4
-#  inputs:
-#    mavenPomFile: 'pom.xml'
-#    goals: 'compile'
-#    options: '-Dskiptests'
-#    publishJUnitResults: false
-#    javaHomeOption: 'JDKVersion'
-#    mavenVersionOption: 'Default'
-#    mavenAuthenticateFeed: false
-#    effectivePomSkip: false
-#    sonarQubeRunAnalysis: false
+- task: Maven@4
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'compile'
+    options: '-Dskiptests'
+    publishJUnitResults: false
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
