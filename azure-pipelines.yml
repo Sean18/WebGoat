@@ -10,17 +10,23 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- task: Maven@4
+- task: Bash@3
   inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'compile'
-    options: '-Dskiptests'
-    publishJUnitResults: false
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: false
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      echo 'Hello world'
+      java -version
+      echo 'done.'
+
+#- task: Maven@4
+#  inputs:
+#    mavenPomFile: 'pom.xml'
+#    goals: 'compile'
+#    options: '-Dskiptests'
+#    publishJUnitResults: false
+#    javaHomeOption: 'JDKVersion'
+#    mavenVersionOption: 'Default'
+#    mavenAuthenticateFeed: false
+#    effectivePomSkip: false
+#    sonarQubeRunAnalysis: false
