@@ -36,3 +36,15 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+
+- task: BlackDuckSecurityScan@2.0.0
+  displayName: 'Polaris SAST Scan'
+  inputs:
+    POLARIS_SERVER_URL: $(POLARIS_SERVER_URL)
+    POLARIS_ACCESS_TOKEN: $(POLARIS_ACCESSTOKEN)
+    POLARIS_ASSESSMENT_TYPES: 'SAST'
+    
+    POLARIS_APPLICATION_NAME: 'SeanM ADO Test'
+    POLARIS_PROJECT_NAME: 'WebGoat'
+    POLARIS_BRANCH_NAME: 'BD Security Scan'
+
