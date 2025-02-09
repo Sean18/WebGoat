@@ -43,14 +43,21 @@ steps:
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
 
-- task: BlackDuckSecurityScan@2.0.0
-  displayName: 'Polaris SAST Scan'
-  inputs:
-    POLARIS_SERVER_URL: $(POLARIS_SERVER_URL)
-    POLARIS_ACCESS_TOKEN: $(POLARIS_ACCESSTOKEN)
-    POLARIS_ASSESSMENT_TYPES: 'SAST'
-    
-    POLARIS_APPLICATION_NAME: 'SeanM ADO Test'
-    POLARIS_PROJECT_NAME: 'WebGoat'
-    POLARIS_BRANCH_NAME: 'BD Security Scan'
+#- task: BlackDuckSecurityScan@2.0.0
+#  displayName: 'Polaris SAST Scan'
+#  inputs:
+#    POLARIS_SERVER_URL: $(POLARIS_SERVER_URL)
+#    POLARIS_ACCESS_TOKEN: $(POLARIS_ACCESSTOKEN)
+#    POLARIS_ASSESSMENT_TYPES: 'SAST'
+#    
+#    POLARIS_APPLICATION_NAME: 'SeanM ADO Test'
+#    POLARIS_PROJECT_NAME: 'WebGoat'
+#    POLARIS_BRANCH_NAME: 'BD Security Scan'
 
+- task: BlackDuckSecurityScan@2
+  displayName: 'Black Duck SCA Scan'
+  env:
+    DETECT_PROJECT_NAME: 'SeanM ADO Test'
+  inputs:
+    blackducksca_url: $(BLACKDUCK_URL)
+    blackducksca_token: $(BLACKDUCK_API_TOKEN)
