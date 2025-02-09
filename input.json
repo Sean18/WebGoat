@@ -1,0 +1,25 @@
+{
+	"data": {
+		"polaris": {
+			
+			"application": {
+				"name": "SeanM CLI Test"
+			},
+			"project": {
+				"name": "WebGoat"
+			},
+			"branch": {
+				"name": "InputJSON"
+			},	
+			"assessment": {
+				"types":  ["SAST"]
+			},
+            "test": {
+                "sca": {
+                    "type": "SCA-PACKAGE"
+                }        
+            },
+			"serverUrl": "https://poc.polaris.blackduck.com"
+		}
+	}
+}
