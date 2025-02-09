@@ -60,4 +60,4 @@ steps:
     DETECT_PROJECT_NAME: 'SeanM ADO Test'
   inputs:
     blackducksca_url: $(BLACKDUCKSCA_URL)
-    blackducksca_token: $(BLACKDUCKSCA_API_TOKEN)
+    blackducksca_token: $(BLACKDUCKSCA_TOKEN)
