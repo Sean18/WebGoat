@@ -20,12 +20,15 @@ steps:
     jdkSourceOption: 'PreInstalled'
 
 - task: Bash@3
+  displayName: 'Debug Info'
   inputs:
     targetType: 'inline'
     script: |
       # Write your commands here
-      echo 'Hello world'
+      echo 'java version:'
       java -version
+      echo 'Polaris URL: $(POLARIS_SERVER_URL)'
+      echo 'Polaris Token: $(POLARIS_ACCESSTOKEN)'
       echo 'done.'
 
 - task: Maven@4
